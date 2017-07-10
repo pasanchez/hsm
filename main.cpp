@@ -244,9 +244,9 @@ int main(int argc, char* argv[]) {
         std::string response;
         response = "HTTP/1.0 200 OK\r\n Content-Length: 45\r\n\r\n";
         response += "<html><body>";
-        if (params.find("ID") != params.end() && params.find("val") != params.end()){
+        if (params.find("ID") != params.end() && params.find("value") != params.end()){
             stringstream stream;
-            stream <<  updateStock(params["ID"],params["val"],db);
+            stream <<  updateStock(params["ID"],params["value"],db);
             response += stream.str();
         } else {
             response += "<b><big>Bad syntax. Usage: /?name=item_name</big></b> <br>";
